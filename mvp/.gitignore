@@ -1,0 +1,13 @@
+# editos
+.idea
+.vscode
+
+# node related
+.husky
+node_modules
+test-reports
+dist
+
+# python related
+venv
+__pycache__
