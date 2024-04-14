@@ -1,0 +1,31 @@
+@startuml
+interface BaseInterface{
+    +method1(): string
+}
+
+class ConcreteClass1 implements BaseInterface{
+    +method1(): string
+    +someFunc(): string
+}
+
+class ConcreteClass2 implements BaseInterface{
+    +method1(): string
+    +someOtherFunc(): int
+}
+
+class HighLevelClass {
+    -provider: BaseInterface
+    +calculations(): void
+}
+
+' Dependencies
+HighLevelClass --> BaseInterface: uses >
+
+note right of HighLevelClass::"calculations()"
+  function calculations(){
+    ...
+    this.provider.method1()
+    ...
+  }
+end note
+@endumlenduml

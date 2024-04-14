@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "843848d7-74a3-4af3-b6e6-9e3fe2dc6a28",
+		"name": "Thesis-MVP-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13860677"
+	},
+	"item": [
+		{
+			"name": "Backend Service",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "Users",
+							"item": [
+								{
+									"name": "Auth",
+									"item": [
+										{
+											"name": "Register",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\": \"test user 3\",\r\n    \"email\": \"test3@example.com\",\r\n    \"password\": \"password\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://{{backend-base-url}}/api/v1/users",
+													"protocol": "http",
+													"host": [
+														"{{backend-base-url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Login",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"email\": \"user1@example.com\",\r\n    \"password\": \"password1\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://{{backend-base-url}}/api/v1/users/login",
+													"protocol": "http",
+													"host": [
+														"{{backend-base-url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users",
+														"login"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Logout",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"email\": \"user1@example.com\",\r\n    \"password\": \"password1\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://{{backend-base-url}}/api/v1/users/logout",
+													"protocol": "http",
+													"host": [
+														"{{backend-base-url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users",
+														"logout"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Get Top-N for logged in user",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{backend-base-url}}/api/v1/recommendations",
+											"protocol": "http",
+											"host": [
+												"{{backend-base-url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"recommendations"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Test",
+							"item": [
+								{
+									"name": "is API running",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{backend-base-url}}",
+											"protocol": "http",
+											"host": [
+												"{{backend-base-url}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Unhandled Exception",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{backend-base-url}}/test/uncaught-exception",
+											"protocol": "http",
+											"host": [
+												"{{backend-base-url}}"
+											],
+											"path": [
+												"test",
+												"uncaught-exception"
+											]
+										},
+										"description": "It causes expected app crash"
+									},
+									"response": []
+								},
+								{
+									"name": "Unhandled Rejection",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{backend-base-url}}/test/unhandled-rejection",
+											"protocol": "http",
+											"host": [
+												"{{backend-base-url}}"
+											],
+											"path": [
+												"test",
+												"unhandled-rejection"
+											]
+										},
+										"description": "It causes expected app crash"
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Intelligent Service",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "Test",
+							"item": [
+								{
+									"name": "Get Top-N Recommendations for all users",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{intelligent-base-url}}/api/v1/predictions",
+											"protocol": "http",
+											"host": [
+												"{{intelligent-base-url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"predictions"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get Top-N Recommendations for User ID Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{intelligent-base-url}}/api/v1/predictions/500",
+									"protocol": "http",
+									"host": [
+										"{{intelligent-base-url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"predictions",
+										"500"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

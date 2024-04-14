@@ -1,0 +1,21 @@
+@startuml
+actor Client
+participant "Frontend Service" as Frontend
+participant "Backend Service" as Backend
+participant "Intelligent Service" as Intelligent
+
+note over Intelligent
+Preprocessing Steps:
+ - Train model
+ - Generate Top-N for every user
+end note
+
+Client -> Frontend: Submit login form
+Frontend -> Backend: Login request
+Backend -> Frontend: Successful login
+Frontend -> Backend: Top-N request for client
+Backend -> Intelligent: Top-N request for frontend
+Intelligent --> Backend : Top-N response for backend
+Backend --> Frontend: Top-N response for frontend
+Frontend --> Client: Top-N is visible for user
+@enduml

@@ -1,0 +1,32 @@
+:root {
+  font-family: 'Helvetica Neue', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  min-height: 80vh;
+}
+
+nav button:not(:last-child) {
+  margin: 0 0.5rem;
+}
+
+nav button:last-child {
+  margin-left: 0.5rem;
+}
+
+.required-asterisk {
+  color: red;
+}

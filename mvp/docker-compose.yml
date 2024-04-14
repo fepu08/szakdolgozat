@@ -1,0 +1,94 @@
+services:
+  backend-service:
+    container_name: 'recsys-backend-service'
+    build:
+      context: ./backend-service
+      target: dev
+    command: npm run dev
+    ports:
+      - '3000:3000'
+      - '9229:9229'
+      - '9230:9230'
+    user: node
+    volumes:
+      - ./backend-service:/opt/node_app/app
+      - notused:/opt/node_app/app/node_modules
+    environment:
+      - NODE_EVN=development
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - JWT_SECRET=${JWT_SECRET}
+      - DATABASE=${DATABASE}
+      - INTELLIGENT_SERVICE_HOST=intelligent-service
+      - INTELLIGENT_SERVICE_PORT=5000
+    depends_on:
+      - db
+    networks:
+      - application_network
+
+  frontend-service:
+    container_name: 'recsys-frontend-service'
+    build:
+      context: ./frontend-service
+      target: dev
+      args:
+        - VITE_BACKEND_HOST=${VITE_BACKEND_HOST}
+        - VITE_BACKEND_PORT=${VITE_BACKEND_PORT}
+    command: npm run dev
+    ports:
+      - '8080:8080'
+    user: node
+    volumes:
+      - ./frontend-service:/opt/node_app/app
+      - notused:/opt/node_app/app/node_modules
+    depends_on:
+      - db
+    networks:
+      - application_network
+
+  intelligent-service:
+    container_name: 'recsys-intelligent-service'
+    build:
+      context: ./intelligent-service
+    command: python3 -m flask run --host=0.0.0.0 --debug
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./intelligent-service:/usr/src/app
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DATABASE=${DATABASE}
+      - NUM_OF_TOP_N_ITEMS=${NUM_OF_TOP_N_ITEMS}
+    depends_on:
+      - db
+    networks:
+      - application_network
+
+  db:
+    image: 'postgres:16.1'
+    container_name: 'recsys-db'
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=recsys
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - application_network
+
+networks:
+  application_network:
+    driver: bridge
+
+volumes:
+  notused:
+  db:

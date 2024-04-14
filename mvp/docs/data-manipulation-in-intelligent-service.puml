@@ -1,0 +1,62 @@
+@startuml
+class DataProviderBase{
+    + get_movie_data(): List[MovieModel]
+    + get_rating_data(): List[RatingModel]
+}
+
+class CSVDataProvider implements DataProviderBase{
+    + CSVDataProvider(): CSVDataProvider 
+    + get_movie_data(): List[MovieModel]
+    + get_rating_data(): List[RatingModel]
+
+    {static} - read_csv_data(file_path: string, model_class): List[typeof model_class]
+}
+
+class PGDataProvider implements DataProviderBase{
+    + PGDataProvider(dbconfig: Dict): PGDataProvider 
+    - conn: DBConneciton
+    + get_movie_data(): List[MovieModel]
+    + get_rating_data(): List[RatingModel]
+}
+
+class DataHandler {
+    + DataHandler(data_provider: DataProviderBase)
+    {static} - reader: Reader
+    - data_provider: DataProviderBase
+    - movie_data: List[MovieModel]
+    - ratings_data: List[RatingModel]
+    - ratings_dataset: Dataset
+    - trainset: Trainset
+    - testset: Testset
+    - full_trainset: Trainset
+    - full_anti_testset: Testset
+    - LOOCV_trainset: Trainset
+    - LOOCV_testset: Testset
+    - LOOCV_anti_testset: Testset
+    - popularity_rankings: defaultdict[int, int]
+
+    + get_trainset(): Trainset 
+    + get_testset(): Testset
+    + get_full_trainset(): Trainset 
+    + get_full_anti_testset(): Testset
+    + get_leave_one_out_trainset(): Trainset 
+    + get_leave_one_out_testset(): Testset
+    + get_leave_one_out_anti_testset(): Testset
+    + get_ratings_dataset(): Dataset
+    + get_user_ratings(user_id: int): List[(int,int)]
+    + get_popularity_rankings(): defaultdict[int, int]
+
+    - get_popularity_rankings_for_movies(): defaultdict[int, int]
+    - get_number_of_ratings_for_movies(): defaultdict[int, int]
+}
+
+DataHandler --> DataProviderBase: uses >
+
+note right of DataHandler::movie_data
+  uses self.data_provider.get_movie_data()
+end note
+
+note right of DataHandler::ratings_data
+  uses self.data_provider.get_ratings_data()
+end note
+@enduml

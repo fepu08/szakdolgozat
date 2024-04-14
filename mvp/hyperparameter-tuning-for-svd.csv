@@ -1,0 +1,5 @@
+Metric,Best Score,Best Parameters
+rmse,0.8639100157857049,"{'n_factors': 150, 'n_epochs': 20, 'lr_all': 0.007, 'reg_all': 0.02, 'lr_bu': 0.005, 'lr_bi': 0.005, 'reg_bu': 0.05, 'reg_bi': 0.05, 'reg_pu': 0.05, 'reg_qi': 0.05}"
+mae,0.6638420089967452,"{'n_factors': 150, 'n_epochs': 20, 'lr_all': 0.007, 'reg_all': 0.02, 'lr_bu': 0.005, 'lr_bi': 0.005, 'reg_bu': 0.05, 'reg_bi': 0.05, 'reg_pu': 0.05, 'reg_qi': 0.05}"
+
+Time Elapsed (seconds),21281.787441968918 ~ 6 hours

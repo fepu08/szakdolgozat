@@ -1,0 +1,21 @@
+@startuml
+actor Kliens
+participant "Frontend Szolgáltatás" as Frontend
+participant "Backend Szolgáltatás" as Backend
+participant "Intelligens Szolgáltatás" as Intelligent
+
+note over Intelligent
+Előkészületi lépések:
+ - Modell tanítása
+ - Top-N ajánlás generálása minden felhasználó számára
+end note
+
+Kliens-> Frontend: Bejelentkezés űrlap beküldése
+Frontend -> Backend: Bejelentkezési kérelem
+Backend -> Frontend: Sikeres Bejelentkezés
+Frontend-> Backend: Top-N kérés a kliens részére
+Backend-> Intelligent: Top-N kérés a backend részére
+Intelligent--> Backend: Top-N válasz a backend részére
+Backend--> Frontend: Top-N válasz a frontend részére
+Frontend--> Kliens: Top-N megjelenítése a kliens számára
+@enduml
