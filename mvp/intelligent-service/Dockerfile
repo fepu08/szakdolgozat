@@ -6,4 +6,7 @@ RUN apt-get update && \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
 CMD [ "python3", "-m" , "flask", "yrun", "--host=0.0.0.0"]

@@ -39,9 +39,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
   const getTopN = async () => {
-    console.log('getTopN called');
     const savedRecommendation = localStorage.getItem('recommendations');
-    console.log(`savedRecommendation = ${savedRecommendation}`);
     try {
       let topN: MovieDTO[];
       if (savedRecommendation) {
