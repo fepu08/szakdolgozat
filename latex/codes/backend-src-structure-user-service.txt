@@ -1,0 +1,26 @@
+src/
+|-- api
+|   `-- v1
+|       |-- movies
+|       |   `-- ...
+|       |-- recommendations
+|       |   `-- ...
+|       `-- users
+|           |-- user-controller.ts
+|           |-- user-dao.ts
+|           |-- user-dto.ts
+|           |-- user-model.ts
+|           |-- user-routes.ts
+|           `-- user-service.ts
+|-- config
+|   |-- pg-config.ts
+|   `-- sequelize-config.ts
+|-- errors
+|   `-- ...
+|-- middlewares
+|   `-- ...
+|-- models
+|   `-- ...
+|-- utils
+|   `-- ...
+`-- index.ts

@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# Except
+!.gitignore
+!/codes/
+!/codes/**/*
+!/images/
+!/images/**/*
+!ferenc-besenyei-thesis.pdf
+!ferenc-besenyei-thesis.tex
