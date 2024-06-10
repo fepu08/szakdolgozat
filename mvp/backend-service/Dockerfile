@@ -32,6 +32,6 @@ CMD ["npm", "run", "test"]
 ## default, production
 FROM base as prod
 RUN npm ci --ignore-scripts && mv node_modules ../ && mkdir node_modules 
-RUN ["npm", "build"]
+RUN ["npm", "run", "build"]
 CMD ["node", "./dist/index.js"]
 

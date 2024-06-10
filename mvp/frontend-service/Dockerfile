@@ -37,7 +37,7 @@ CMD ["npm", "run", "test"]
 
 FROM base as build
 RUN npm ci --ignore-scripts && mv node_modules ../ && mkdir node_modules 
-RUN ["npm", "build"]
+RUN ["npm", "run", "build"]
 
 FROM nginx
 COPY --from=build /dist /usr/share/nginx/html
