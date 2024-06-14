@@ -16,3 +16,12 @@ VALUES
     (611, 109487, 5), --interstellar
     (611, 79132, 5), --inception
     (611, 2116, 3); -- lotr
+
+
+INSERT INTO ratings (user_id, movie_id, rating)
+VALUES
+    (611, 750, 1), -- Dr Strangelove..
+    (611, 1197, 1), -- The Princess Bride
+    (611, 1223, 1), -- Grand Day Out with Wallace and Gromit 
+    (611, 2202, 1), -- Lifeboat 
+    (611, 3468, 1); -- The Hustler 

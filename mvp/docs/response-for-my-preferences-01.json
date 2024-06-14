@@ -1,0 +1,86 @@
+[
+  {
+    "id": 318,
+    "title": "Shawshank Redemption, The",
+    "releaseYear": 1994,
+    "createdAt": "2024-06-14T18:57:45.464Z",
+    "updatedAt": "2024-06-14T18:57:45.464Z"
+  },
+  {
+    "id": 750,
+    "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+    "releaseYear": 1964,
+    "createdAt": "2024-06-14T18:57:46.628Z",
+    "updatedAt": "2024-06-14T18:57:46.628Z"
+  },
+  {
+    "id": 908,
+    "title": "North by Northwest",
+    "releaseYear": 1959,
+    "createdAt": "2024-06-14T18:57:46.916Z",
+    "updatedAt": "2024-06-14T18:57:46.916Z"
+  },
+  {
+    "id": 912,
+    "title": "Casablanca",
+    "releaseYear": 1942,
+    "createdAt": "2024-06-14T18:57:46.937Z",
+    "updatedAt": "2024-06-14T18:57:46.937Z"
+  },
+  {
+    "id": 1136,
+    "title": "Monty Python and the Holy Grail",
+    "releaseYear": 1975,
+    "createdAt": "2024-06-14T18:57:47.456Z",
+    "updatedAt": "2024-06-14T18:57:47.456Z"
+  },
+  {
+    "id": 1197,
+    "title": "Princess Bride, The",
+    "releaseYear": 1987,
+    "createdAt": "2024-06-14T18:57:47.547Z",
+    "updatedAt": "2024-06-14T18:57:47.547Z"
+  },
+  {
+    "id": 1204,
+    "title": "Lawrence of Arabia",
+    "releaseYear": 1962,
+    "createdAt": "2024-06-14T18:57:47.567Z",
+    "updatedAt": "2024-06-14T18:57:47.567Z"
+  },
+  {
+    "id": 1223,
+    "title": "Grand Day Out with Wallace and Gromit, A",
+    "releaseYear": 1989,
+    "createdAt": "2024-06-14T18:57:47.623Z",
+    "updatedAt": "2024-06-14T18:57:47.623Z"
+  },
+  {
+    "id": 1235,
+    "title": "Harold and Maude",
+    "releaseYear": 1971,
+    "createdAt": "2024-06-14T18:57:47.658Z",
+    "updatedAt": "2024-06-14T18:57:47.658Z"
+  },
+  {
+    "id": 2019,
+    "title": "Seven Samurai (Shichinin no samurai)",
+    "releaseYear": 1954,
+    "createdAt": "2024-06-14T18:57:49.366Z",
+    "updatedAt": "2024-06-14T18:57:49.366Z"
+  },
+  {
+    "id": 2202,
+    "title": "Lifeboat",
+    "releaseYear": 1944,
+    "createdAt": "2024-06-14T18:57:49.859Z",
+    "updatedAt": "2024-06-14T18:57:49.859Z"
+  },
+  {
+    "id": 3468,
+    "title": "Hustler, The",
+    "releaseYear": 1961,
+    "createdAt": "2024-06-14T18:57:52.948Z",
+    "updatedAt": "2024-06-14T18:57:52.948Z"
+  }
+]
