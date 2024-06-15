@@ -34,8 +34,8 @@ const MovieCarousel = ({
   };
 
   return (
-    <div className='movie-carousel__container'>
-      <h2 className='movie-carousel__header'>{header}</h2>
+    <div className="movie-carousel__container">
+      <h2 className="movie-carousel__header">{header}</h2>
       <Carousel
         className={'movie-carousel'}
         responsive={responsive}
@@ -44,7 +44,11 @@ const MovieCarousel = ({
         customButtonGroup={<CustomCarouselButtonGroup />}
       >
         {movies.map((movie, index) => (
-          <MovieCarouselItem key={index} movie={movie} />
+          <MovieCarouselItem
+            key={index}
+            movie={movie}
+            image={`./hacker-havock-${getIndex(index)}.jpg`}
+          />
         ))}
       </Carousel>
     </div>
@@ -52,3 +56,13 @@ const MovieCarousel = ({
 };
 
 export default MovieCarousel;
+
+// Because I only generated 6 pics we need to get somehow the index of the image
+// because image URI is like this: hacker-havock-{index}.jpg
+function getIndex(index: number): number {
+  let idx = index + 1;
+  if (idx > 6) {
+    idx = idx - 6;
+  }
+  return idx % 7;
+}

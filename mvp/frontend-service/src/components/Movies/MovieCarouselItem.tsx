@@ -4,20 +4,14 @@ import { getNiceTitle } from '../../utils';
 
 type MovieCarouselItemProps = {
   movie: MovieItem;
+  image: string;
 };
 
-const MovieCarouselItem = ({ movie }: MovieCarouselItemProps) => {
+const MovieCarouselItem = ({ movie, image }: MovieCarouselItemProps) => {
   const niceTitle = getNiceTitle(movie.title);
   return (
-    <Card className='movie-carousel__item'>
-      <Card.Img
-        variant='top'
-        src={`https://source.unsplash.com/random?${movie.title.replace(
-          /\s+/g,
-          '+'
-        )}`}
-        alt={niceTitle}
-      />
+    <Card className="movie-carousel__item">
+      <Card.Img variant="top" src={image} alt={niceTitle} />
       <Card.Body>
         <Card.Title>{niceTitle}</Card.Title>
       </Card.Body>
